@@ -58,8 +58,8 @@ public class MainView extends CustomComponent implements View {
 
     MenuBar.Command skNjopCommand = new MenuBar.Command() {
         public void menuSelected(MenuBar.MenuItem selectedItem) {
-            panel = new SkNjopParamView();
-            getUI().doRefresh(null);
+            //getSession().setAttribute("user", username);
+            getUI().getNavigator().navigateTo(SkNjopParamView.NAME);
         }
     };
 

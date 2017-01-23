@@ -38,7 +38,7 @@ public class AppUI extends UI {
         getNavigator().addView(MainView.NAME,
             MainView.class);
 
-
+        getNavigator().addView(SkNjopParamView.NAME, SkNjopParamView.class);
         //
         // We use a view change handler to ensure the user is always redirected
         // to the login view if the user is not logged in.
@@ -56,7 +56,7 @@ public class AppUI extends UI {
                     // Redirect to login view always if a user has not yet
                     // logged in
                     getNavigator().navigateTo(LoginView.NAME);
-                    header.setVisible(false);
+                    //header.setVisible(false);
                     return false;
 
                 } else if (isLoggedIn && isLoginView) {
@@ -64,7 +64,7 @@ public class AppUI extends UI {
                     // then cancel
                     return false;
                 }
-                header.setVisible(true);
+                //header.setVisible(true);
                 return true;
             }
 

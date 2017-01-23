@@ -1,6 +1,7 @@
 package lab.aikibo.ui;
 
 import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
@@ -20,9 +21,12 @@ public class SkNjopParamView extends CustomComponent implements View {
     private void initComponent() {
         setSizeFull();
         VerticalLayout layout = new VerticalLayout();
-        setContent(layout);
+        setCompositionRoot(layout);
 
         layout.addComponent(new Label("Di Parameter SK NJOP "));
     }
 
+    @Override
+    public void enter(ViewChangeListener.ViewChangeEvent event) {
+    }
 }
