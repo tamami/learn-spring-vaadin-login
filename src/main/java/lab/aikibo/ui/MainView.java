@@ -1,5 +1,6 @@
 package lab.aikibo.ui;
 
+import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
@@ -12,13 +13,11 @@ public class MainView extends CustomComponent implements View {
     public static final String NAME = "";
 
     Label text = new Label();
-
     MenuBar menuBar;
-
     Panel panel = new Panel();
+    Navigator navigator = new Navigator(UI.getCurrent(), panel);
 
     Button logout = new Button("Logout", new Button.ClickListener() {
-
         @Override
         public void buttonClick(Button.ClickEvent event) {
 
@@ -44,6 +43,8 @@ public class MainView extends CustomComponent implements View {
 
         verLayout.addComponent(panel);
         setCompositionRoot(verLayout);
+
+        navigator.addView(SkNjopParamView.NAME, SkNjopParamView.class);
     }
 
     @Override
@@ -59,7 +60,8 @@ public class MainView extends CustomComponent implements View {
     MenuBar.Command skNjopCommand = new MenuBar.Command() {
         public void menuSelected(MenuBar.MenuItem selectedItem) {
             //getSession().setAttribute("user", username);
-            getUI().getNavigator().navigateTo(SkNjopParamView.NAME);
+            //getUI().getNavigator().navigateTo(SkNjopParamView.NAME);
+            navigator.navigateTo(SkNjopParamView.NAME);
         }
     };
 
