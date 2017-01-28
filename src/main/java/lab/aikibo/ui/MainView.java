@@ -31,9 +31,11 @@ public class MainView extends CustomComponent implements View {
 
     public MainView() {
         VerticalLayout verLayout = new VerticalLayout();
+        HorizontalLayout credLayout = new HorizontalLayout(text, logout);
 
         //setCompositionRoot(new CssLayout(text, logout));
-        verLayout.addComponent(new CssLayout(text, logout));
+        verLayout.addComponent(credLayout);
+        verLayout.setComponentAlignment(credLayout, Alignment.MIDDLE_RIGHT);
 
         menuBar = new MenuBar();
         verLayout.addComponent(menuBar);
